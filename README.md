@@ -9,7 +9,7 @@ The Arduino outputs the data in JSON format: {"bpm":value,"amplitude":value}
 This directory has template versions of the Arduino (.ino) and Unity (.cs) files to output JSON from Arduino, read the serial input in Unity, and put it inside a Unity object. 
 
 # How to set it up
-Upload 
+Upload SerialJSON.ino to your Arduino device. Change the code to fit the data you want to send. And make sure you are outputting in the correct format by checking the "Serial Monitor". 
 
 
 
