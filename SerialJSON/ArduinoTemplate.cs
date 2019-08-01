@@ -7,7 +7,7 @@ public class ArduinoCoroutine : MonoBehaviour
     // This class is to create an object with the JSON data we are collecting
 
     [System.Serializable]           // This line is important
-    public class MyClass
+    public class JSONClass
     {
         public int data1;
         public string data2;
@@ -22,7 +22,7 @@ public class ArduinoCoroutine : MonoBehaviour
     bool streamRunning = false;
 
     // Create object instances
-    public MyClass mc = new MyClass();
+    public JSONClass json = new JSONClass();
 
     // Coroutine
     private IEnumerator coroutine;
@@ -34,7 +34,8 @@ public class ArduinoCoroutine : MonoBehaviour
         StartCoroutine(coroutine);
     }
 
-
+    // This is a Coroutine method that runs independantly from the Update() method
+    // waitTime defines how frequently this method should run, waitTime = 2 runs once every two seconds.
     IEnumerator SerialRead(float waitTime)
     {
         stream.Open();
@@ -56,7 +57,7 @@ public class ArduinoCoroutine : MonoBehaviour
 
                 if (input[0] == '{' && input.Contains("}"))
                 {
-                    mc = JsonUtility.FromJson<MyClass>(input);
+                    json = JsonUtility.FromJson<JSONClass>(input);
                 }
             }
 
