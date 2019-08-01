@@ -6,7 +6,7 @@ This is an example code from a Unity project I was working on. Recieving heart r
 The Arduino outputs the data in JSON format: {"bpm":value,"amplitude":value}
 
 # SerialJSON
-This directory has template versions of the Arduino (.ino) and Unity (.cs) files to output JSON from Arduino, read the serial input in Unity, and put it inside a Unity object. 
+This directory has a template version of the Arduino (.ino) and Unity (.cs) files that output JSON from Arduino, read the serial input in Unity, and put the collected data inside an object. 
 
 # How to set up Arduino
 Download ArduinoJSON library by navigating to Tools -> Manage Libraries. Using the search bar, look for ArduinoJSON and get the latest version.
