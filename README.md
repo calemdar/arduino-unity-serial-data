@@ -3,20 +3,20 @@ Transfer JSON data from an Arduino device to Unity
 
 # HeartRateJSON
 This is an example code from a Unity project I was working on. Recieving heart rate pulses using Arduino and a pulse sonsor, and getting this sensor information into Unity.
-The Arduino outputs the data in JSON format: {"bpm":value,"amplitude":value}
+The Arduino outputs the data in JSON format: **{"bpm":value,"amplitude":value}**
 
 # SerialJSON
 This directory has a template version of the Arduino (.ino) and Unity (.cs) files that output JSON from Arduino, read the serial input in Unity, and put the collected data inside an object. 
 
 # How to set up Arduino
-Download ArduinoJSON library by navigating to Tools -> Manage Libraries. Using the search bar, look for ArduinoJSON and get the latest version.
+Download ArduinoJSON library by navigating to **Tools -> Manage Libraries**. Using the search bar, look for ArduinoJSON and get the latest version.
  
 ![alt text](https://github.com/calemdar/arduino-unity-serial-data/blob/master/images/manage-libs.png "Manage Libraries")
 
 ![alt text](https://github.com/calemdar/arduino-unity-serial-data/blob/master/images/lib-arduinoJSON.png "ArduinoJSON")
 
 Upload SerialJSON.ino to your Arduino device, and make sure you are outputting in the correct format by checking the "Serial Monitor". It should be printing:
-{"data1":10,"data2":"hello","data3":3.14159}
+**{"data1":10,"data2":"hello","data3":3.14159}**
 
 
 # How to set up Unity
