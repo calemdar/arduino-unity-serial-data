@@ -24,6 +24,8 @@ For my project I was using Unity version 2019.1.9f1. Inside your Unity project i
 
 Once you have all those in, try to run the Unity Engine, and check the values inside the game object. You should be able to see a variable called "json". Click on the arrow next to it to see the values it stores. If you are seeing the same values you were printing for data1, data2, and data3, you should be all set up.
 
+![alt text](https://github.com/calemdar/arduino-unity-serial-data/blob/master/images/unity-data.png "Unity")
+
 If you are getting errors read the instructions again and make sure you followed them exactly. If you are not sure why you are getting an error, create an issue through GitHub and I will see if I can be of some help. 
 
 # All set up, now what?
