@@ -8,15 +8,25 @@ The Arduino outputs the data in JSON format: {"bpm":value,"amplitude":value}
 # SerialJSON
 This directory has template versions of the Arduino (.ino) and Unity (.cs) files to output JSON from Arduino, read the serial input in Unity, and put it inside a Unity object. 
 
-# How to set it up
-Download arduinoJSON library by navigating to Tools -> Manage Libraries.
+# How to set up Arduino
+Download ArduinoJSON library by navigating to Tools -> Manage Libraries. Using the search bar, look for ArduinoJSON and get the latest version.
  
 ![alt text](https://github.com/calemdar/arduino-unity-serial-data/blob/master/images/manage-libs.png "Manage Libraries")
 
-![alt text](https://github.com/calemdar/arduino-unity-serial-data/blob/master/images/lib-arduinoJSON.png "arduinoJSON")
+![alt text](https://github.com/calemdar/arduino-unity-serial-data/blob/master/images/lib-arduinoJSON.png "ArduinoJSON")
 
-Upload SerialJSON.ino to your Arduino device. Change the code to fit the data you want to send. And make sure you are outputting in the correct format by checking the "Serial Monitor". 
+Upload SerialJSON.ino to your Arduino device, and make sure you are outputting in the correct format by checking the "Serial Monitor". It should be printing:
+{"data1":10,"data2":"hello","data3":3.14159}
 
 
+# How to set up Unity
+For my project I was using Unity version 2019.1.9f1. Inside your Unity project import ArduinoTemplate.cs and assign the script to an empty game object. Make sure to check that the serial ports match. You can do this by navigating to Tools -> Port inside the Arduino IDE or just check the port at the bottom right of the Arduino IDE. The first parameter in SerialPort() method in ArduinoTemplate.cs should be matching with the port used by the Arduino. Make sure to close the "Serial Monitor" because it will block Unity from looking at the port.
 
+Once you have all those in, try to run the Unity Engine, and check the values inside the game object. You should be able to see a variable called "mc". Click on the arrow next to it to see the values it stores. If you are seeing the same values you were printing for data1, data2, and data3, you should be all set up.
+
+If you are getting errors read the instructions again and make sure you followed them exactly. If you are not sure why you are getting an error, create an issue through GitHub and I will see if I can be of some help. 
+
+# All set up, now what?
+The goal of this Arduino-Unity integration is to collect any type of sensor data using the Arduino, and send it directly into Unity. Now you can change the Arduino code to collect and send the type of data you want. Just make sure ArduinoJSON library handles that data type. 
+You should also make sure the name of the JSON objects you are sending should match with the fields inside the MyClass class in the C# script. 
 
